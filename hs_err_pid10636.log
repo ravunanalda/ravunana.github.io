@@ -1,0 +1,197 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for Failed to commit area from 0x0000000702600000 to 0x0000000712400000 of length 266338304.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3301), pid=10636, tid=20328
+#
+# JRE version:  (11.0.10+8) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.10+8-jvmci-21.0-b06, mixed mode, sharing, tiered, jvmci, jvmci compiler, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct -XX:-UnlockExperimentalVMOptions -XX:ThreadPriorityPolicy=1 c:\Users\miros\.vscode\extensions\redhat.vscode-apache-camel-0.0.31\jars\language-server.jar
+
+Host: Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.804)
+Time: Mon Mar 22 17:04:10 2021 W. Central Africa Standard Time elapsed time: 0.023075 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000136c86fe800):  JavaThread "Unknown thread" [_thread_in_vm, id=20328, stack(0x000000138af00000,0x000000138b000000)]
+
+Stack: [0x000000138af00000,0x000000138b000000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x611c4a]
+V  [jvm.dll+0x74b89e]
+V  [jvm.dll+0x74cf6f]
+V  [jvm.dll+0x74d633]
+V  [jvm.dll+0x23b5d8]
+V  [jvm.dll+0x60ee8a]
+V  [jvm.dll+0x603ab5]
+V  [jvm.dll+0x2f0e0c]
+V  [jvm.dll+0x2f0c92]
+V  [jvm.dll+0x2f5946]
+V  [jvm.dll+0x33a01f]
+V  [jvm.dll+0x339a50]
+V  [jvm.dll+0x2ce0d8]
+V  [jvm.dll+0x2cf226]
+V  [jvm.dll+0x727077]
+V  [jvm.dll+0x72894f]
+V  [jvm.dll+0x346d69]
+V  [jvm.dll+0x70a220]
+V  [jvm.dll+0x3aeb3f]
+V  [jvm.dll+0x3b1061]
+C  [jli.dll+0x520b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00000136c65e0970, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000136c8713800 GCTaskThread "GC Thread#0" [stack: 0x000000138b000000,0x000000138b100000] [id=1348]
+  0x00000136c8770000 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000138b100000,0x000000138b200000] [id=7976]
+  0x00000136c8772800 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000138b200000,0x000000138b300000] [id=14468]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb604fd777]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000136c86faa00] Heap_lock - owner thread: 0x00000136c86fe800
+
+Heap address: 0x0000000702600000, size: 4058 MB, Compressed Oops mode: Non-zero based: 0x0000000702600000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.015 Loaded shared library C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff747570000 - 0x00007ff74757d000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\java.exe
+0x00007ffbadfb0000 - 0x00007ffbae1a5000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffbadcd0000 - 0x00007ffbadd8d000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffbab7d0000 - 0x00007ffbaba99000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffbabc00000 - 0x00007ffbabd00000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffb818e0000 - 0x00007ffb818f5000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\VCRUNTIME140.dll
+0x00007ffb81ea0000 - 0x00007ffb81eb7000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\jli.dll
+0x00007ffbad570000 - 0x00007ffbad710000 	C:\Windows\System32\USER32.dll
+0x00007ffbab6f0000 - 0x00007ffbab712000 	C:\Windows\System32\win32u.dll
+0x00007ffb91ef0000 - 0x00007ffb9218a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d\COMCTL32.dll
+0x00007ffbad9d0000 - 0x00007ffbad9fa000 	C:\Windows\System32\GDI32.dll
+0x00007ffbad840000 - 0x00007ffbad8de000 	C:\Windows\System32\msvcrt.dll
+0x00007ffbabaf0000 - 0x00007ffbabbfb000 	C:\Windows\System32\gdi32full.dll
+0x00007ffbabd00000 - 0x00007ffbabd9d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffbad2a0000 - 0x00007ffbad2d0000 	C:\Windows\System32\IMM32.DLL
+0x00007ffb84710000 - 0x00007ffb847ab000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\msvcp140.dll
+0x00007ffb60220000 - 0x00007ffb60d1c000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\server\jvm.dll
+0x00007ffbad3f0000 - 0x00007ffbad49c000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffbadd90000 - 0x00007ffbade2c000 	C:\Windows\System32\sechost.dll
+0x00007ffbade30000 - 0x00007ffbadf5b000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffbadf60000 - 0x00007ffbadf68000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffb97450000 - 0x00007ffb97459000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffb9be40000 - 0x00007ffb9be67000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffbad380000 - 0x00007ffbad3eb000 	C:\Windows\System32\WS2_32.dll
+0x00007ffba3f10000 - 0x00007ffba3f1a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffba9f90000 - 0x00007ffba9fa2000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffba5bb0000 - 0x00007ffba5bc0000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\verify.dll
+0x00007ffba9500000 - 0x00007ffba96e4000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffb97120000 - 0x00007ffb9714c000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffbabf90000 - 0x00007ffbac010000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffb9b990000 - 0x00007ffb9b9b8000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\java.dll
+0x00007ffba5ba0000 - 0x00007ffba5baa000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\jimage.dll
+0x00007ffba5770000 - 0x00007ffba5787000 	C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d;C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin\server
+
+VM Arguments:
+jvm_args: -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCIProduct -XX:-UnlockExperimentalVMOptions -XX:ThreadPriorityPolicy=1 
+java_command: c:\Users\miros\.vscode\extensions\redhat.vscode-apache-camel-0.0.31\jars\language-server.jar
+java_class_path (initial): c:\Users\miros\.vscode\extensions\redhat.vscode-apache-camel-0.0.31\jars\language-server.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     bool EnableJVMCIProduct                       = true                                {JVMCI product} {jimage}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4255121408                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     intx ThreadPriorityPolicy                     = 1                                         {product} {jimage}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\dotnet\;C:\Program Files\GraalVM\graalvm-ce-java11-21.0.0\bin;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.6.3\bin;C:\Program Files\OpenSSH-Win64;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\AdoptOpenJDK\jdk-8.0.282.8-hotspot\bin;C:\Users\miros\AppData\Local\Microsoft\WindowsApps;C:\Users\miros\AppData\Roaming\npm;C:\Users\miros\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\miros\.dotnet\tools
+USERNAME=miros
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.804)
+OS uptime: 1 days 0:22 hours
+Hyper-V role detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10 microcode 0xe0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 16227M (541M free)
+TotalPageFile size 31390M (AvailPageFile size 120M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 314M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.10+8-jvmci-21.0-b06) for windows-amd64 JRE (11.0.10+8-jvmci-21.0-b06), built on Jan 15 2021 08:35:21 by "" with MS VC++ 15.9 (VS2017)
+
+END.
